@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @collageteacher %>
+
+<div>
+  <%= link_to "Edit this collageteacher", edit_collageteacher_path(@collageteacher) %> |
+  <%= link_to "Back to collageteachers", collageteachers_path %>
+
+  <%= button_to "Destroy this collageteacher", @collageteacher, method: :delete %>
+</div>

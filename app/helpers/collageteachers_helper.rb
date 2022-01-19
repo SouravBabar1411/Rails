@@ -1,0 +1,2 @@
+module CollageteachersHelper
+end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Collageteachers</h1>
+
+<div id="collageteachers">
+  <% @collageteachers.each do |collageteacher| %>
+    <%= render collageteacher %>
+    <p>
+      <%= link_to "Show this collageteacher", collageteacher %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New collageteacher", new_collageteacher_path %>
