@@ -1,0 +1,33 @@
+<%= form_with(model: player, local: true) do |form| %>
+  <% if player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :player_name %>
+    <%= form.text_field :player_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :player_country %>
+    <%= form.text_field :player_country %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label "sport_id" %>
+  <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a sport', :selected => @player.sport_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
