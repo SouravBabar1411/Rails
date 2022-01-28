@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'notes/new'
+  get 'notes/create'
+  resources :companies do
+    resources :notes, module: :companies
+  end
+  resources :employees do
+    resources :notes, module: :employees
+  end
+  root 'companies#index'
   resources :logins
   devise_for :users
   resources :appointments

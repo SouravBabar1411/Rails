@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_171342) do
+ActiveRecord::Schema.define(version: 2022_01_28_090047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2022_01_26_171342) do
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
+  create_table "calculators", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "captions", force: :cascade do |t|
     t.string "caption_name"
     t.string "caption_country"
@@ -54,9 +60,24 @@ ActiveRecord::Schema.define(version: 2022_01_26_171342) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "doctor_name"
     t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,6 +87,15 @@ ActiveRecord::Schema.define(version: 2022_01_26_171342) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "notable_type"
+    t.bigint "notable_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id"
   end
 
   create_table "patients", force: :cascade do |t|
