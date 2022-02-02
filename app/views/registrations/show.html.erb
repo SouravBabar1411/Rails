@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <h1 class="display-4"> 
+   <%= @registration.first_name %>
+    <%= @registration.last_name %>
+  </h1>
+  <p class="lead">
+  <%= @registration.email %> |
+  <%= @registration.phone %> |
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_registration_path(@registration), class:"btn btn-info"%> 
+  <%= link_to 'Back', registrations_path, class:"btn btn-info"%>
+</div>
