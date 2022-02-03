@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Man of series:</strong>
+  <%= @achivement.man_of_series %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @achivement.player.player_name %>
+</p>
+
+<%= link_to 'Edit', edit_achivement_path(@achivement) %> |
+<%= link_to 'Back', achivements_path %>

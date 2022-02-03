@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Caption name:</strong>
+  <%= @caption.caption_name %>
+</p>
+
+<p>
+  <strong>Caption country:</strong>
+  <%= @caption.caption_country %>
+</p>
+
+<p>
+  <strong>Caption sport:</strong>
+  <%= @caption.sport.sport_name %>
+</p>
+
+<%= link_to 'Edit', edit_caption_path(@caption) %> |
+<%= link_to 'Back', captions_path %>

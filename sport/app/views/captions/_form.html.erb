@@ -1,0 +1,32 @@
+<%= form_with(model: caption, local: true) do |form| %>
+  <% if caption.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(caption.errors.count, "error") %> prohibited this caption from being saved:</h2>
+
+      <ul>
+      <% caption.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :caption_name %>
+    <%= form.text_field :caption_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caption_country %>
+    <%= form.text_field :caption_country %>
+  </div>
+
+  <div class="field">
+      <%= form.label "sport_id" %>
+      <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a sport', :selected => @caption.sport_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

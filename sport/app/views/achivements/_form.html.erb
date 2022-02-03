@@ -1,0 +1,28 @@
+<%= form_with(model: achivement, local: true) do |form| %>
+  <% if achivement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(achivement.errors.count, "error") %> prohibited this achivement from being saved:</h2>
+
+      <ul>
+      <% achivement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :man_of_series %>
+    <%= form.number_field :man_of_series %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label "person" %>
+  <%= form.collection_select(:player_id, Player.all, :id, :player_name, { :prompt => 'Select a Player', :selected => @achivement.player_id }, { class: 'form-control' }) %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

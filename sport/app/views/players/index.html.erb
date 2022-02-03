@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Players</h1>
+
+<table class="table table-striped " id="playerstable">
+  <thead>
+    <tr>
+      <th>Player name</th>
+      <th>Player country</th>
+      <th>Player game</th>
+      <th>Player gender</th>
+      <th>Player email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.player_name %></td>
+        <td><%= player.player_country %></td>
+        <td><%= player.sport.sport_name %></td>
+        <td><%= player.gender %></td>
+        <td><%= player.email %></td>
+        <%# <td><%= link_to 'Show', player %>
+        <%# <td><%= link_to 'Edit', edit_player_path(player)%>
+        <%# <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%# <%= link_to 'New Player', new_player_path %> 
+<script>
+  $(document).ready(function(){
+    var oTable = $("#playerstable").DataTable({ 
+      // "paging":  false
+      // "info": false
+    })
+  });
+</script>
