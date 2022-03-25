@@ -30,6 +30,12 @@ function oddAll() {
     }
 }
 
+function myChange() {
+    console.log("hiii");
+    var x = document.getElementById("car").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+
 function update() {
     var select = document.getElementById('language');
     var option = select.options[select.selectedIndex];
