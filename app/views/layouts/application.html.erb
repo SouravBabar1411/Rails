@@ -12,19 +12,23 @@
   <body>
     <div class="container-scroller">
       <%# leftsidemenu partial%>
-      <%= render 'shared/leftsidemenu'%>
-
+      <%if user_signed_in?%>
+       <%= render 'shared/leftsidemenu'%>
+      <% end%>
       <div class="container-fluid page-body-wrapper">
+        <%if user_signed_in?%>
           <%# header partial%>
           <%= render 'shared/header'%>
-
           <%# settings-panel partial %>
           <%= render 'shared/settings-panel'%>
+        <% end%>
         <div class="main-panel">
           <%# Main body content%>
           <%= yield %>
+          <%if user_signed_in?%>
           <%# settings-panel partial %>
-          <%= render 'shared/footer'%>
+           <%= render 'shared/footer'%>
+          <%end%>
         </div>  
       </div>
     </div>
