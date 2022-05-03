@@ -64,4 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # devise gem for authentication
 gem 'devise', '~> 4.8'
 
+#jquery gem
 gem 'jquery-rails'
+
+#carrierwave gem for file uploading
+gem 'carrierwave', '~> 2.0'

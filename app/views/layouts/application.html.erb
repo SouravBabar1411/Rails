@@ -10,27 +10,22 @@
   </head>
 
   <body>
-    <div class="container-scroller">
-      <%# leftsidemenu partial%>
-      <%if user_signed_in?%>
-       <%= render 'shared/leftsidemenu'%>
-      <% end%>
-      <div class="container-fluid page-body-wrapper">
-        <%if user_signed_in?%>
-          <%# header partial%>
-          <%= render 'shared/header'%>
-          <%# settings-panel partial %>
-          <%= render 'shared/settings-panel'%>
-        <% end%>
-        <div class="main-panel">
-          <%# Main body content%>
-          <%= yield %>
-          <%if user_signed_in?%>
-          <%# settings-panel partial %>
-           <%= render 'shared/footer'%>
-          <%end%>
-        </div>  
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+      <!-- Left Navigation Partial -->
+      <%= render 'shared/left_navigation' %>
+      
+      <!-- Content Start -->
+      <div class="content">
+        
+        <!-- Header Partial -->
+        <%= render 'shared/header' %>
+        
+        <!-- Main Body -->
+        <%= yield %>
+        
+        <!-- Footer Partial -->
+        <%= render 'shared/footer' %>
       </div>
-    </div>
+    </div>  
   </body>
 </html>

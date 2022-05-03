@@ -9,23 +9,20 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 
-//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require myjavascript
-//= require plugins/Chart.min
-//= require plugins/bootstrap-datepicker.min
-//= require plugins/jquery.flot
-//= require plugins/jquery.flot.resize
-//= require plugins/jquery.flot.categories
-//= require plugins/jquery.flot.fillbetween
-//= require plugins/jquery.flot.stack
-//= require plugins/jquery.flot.pie
-//= require plugins/off-canvas
-//= require plugins/hoverable-collapse
-//= require plugins/misc
-//= require plugins/dashboard
+
+//= require plugins/jquery-3.4.1.min
+//= require plugins/bootstrap.bundle.min
+//= require plugins/chart.min
+//= require plugins/easing.min
+//= require plugins/waypoints.min
+//= require plugins/owl.carousel.min
+//= require plugins/moment.min
+//= require plugins/moment-timezone.min
+//= require plugins/tempusdominus-bootstrap-4.min
+//= require plugins/main
+
 //= require_tree .
